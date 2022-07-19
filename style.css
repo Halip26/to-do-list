@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  color: #fff;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
   max-width: 405px;
   padding: 28px 0 30px;
   margin: 137px auto;
-  background: #fff;
+  background: #202124;
   border-radius: 7px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -49,6 +50,7 @@ body {
   border-radius: 5px;
   padding: 0 20px 0 53px;
   border: 1px solid #999;
+  background: #303134;
 }
 
 .task-input input:focus,
@@ -61,8 +63,8 @@ body {
   color: #bfbfbf;
 }
 
-h2 {
-  padding: 14px 25px;
+.container {
+  padding: 20px 25px;
   padding-top: 0;
 }
 
@@ -83,6 +85,10 @@ li {
   font-size: 17px;
   color: #444444;
   cursor: pointer;
+}
+
+.filters span:hover {
+  color: #3c87ff;
 }
 
 .filters span:first-child {
@@ -125,7 +131,7 @@ li {
 
 .task-box.overflow {
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 265px;
 }
 
 .task-box::-webkit-scrollbar {
@@ -133,7 +139,7 @@ li {
 }
 
 .task-box::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #303134;
   border-radius: 25px;
 }
 
