@@ -26,8 +26,13 @@ body {
   padding: 28px 0 30px;
   margin: 137px auto;
   background: #202124;
+  background: linear-gradient(
+    180deg,
+    rgba(32, 33, 36, 1) 0%,
+    rgba(32, 33, 36, 0.9192051820728291) 100%
+  );
   border-radius: 7px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .task-input {
@@ -196,7 +201,7 @@ li {
   right: -5px;
   bottom: -65px;
   padding: 5px 0;
-  background: #fff;
+  background: #303134;
   position: absolute;
   border-radius: 4px;
   transform: scale(0);
@@ -233,7 +238,7 @@ li {
 }
 
 .settings li:hover {
-  background: #f5f5f5;
+  background: #3c87ff;
 }
 
 .settings li i {
