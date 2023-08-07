@@ -204,7 +204,7 @@ li {
   border-radius: 4px;
   transform: scale(0);
   transform-origin: top right;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 6px #00000026;
   transition: transform 0.2s ease;
 }
 
