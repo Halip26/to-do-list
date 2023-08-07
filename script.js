@@ -53,7 +53,6 @@ function showTodo(filter) {
     // If tasks present, add active class to clearAll button
     clearAll.classList.add("active");
   }
-
   // Check if the height of taskBox is more than or equal to 265
   if (taskBox.offsetHeight >= 265) {
     // If height is more, add overflow class to taskBox
