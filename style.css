@@ -176,6 +176,7 @@ li {
   accent-color: #3c87ff;
 }
 
+/* for javascript function showTodo(filter) */
 .task label p {
   user-select: none;
   margin-left: 12px;

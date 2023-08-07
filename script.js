@@ -92,6 +92,9 @@ function updateStatus(selectedTask) {
   localStorage.setItem("todo-list", JSON.stringify(todos));
 }
 
+/* This function is used to edit a task
+ It takes two parameters: taskId (the id of the task to be edited) 
+ and textName (the text content of the task) */
 function editTask(taskId, textName) {
   editId = taskId;
   isEditTask = true;
@@ -100,6 +103,9 @@ function editTask(taskId, textName) {
   taskInput.classList.add("active");
 }
 
+/* This function is used to delete a task
+ It takes two parameters: deleteId (the id of the task to be deleted) 
+ and filter (the current filter value) */
 function deleteTask(deleteId, filter) {
   isEditTask = false;
   todos.splice(deleteId, 1);
@@ -107,6 +113,8 @@ function deleteTask(deleteId, filter) {
   showTodo(filter);
 }
 
+/* This event listener is triggered when the clearAll element is clicked 
+ It clears all the tasks in the todos array and updates the localStorage */
 clearAll.addEventListener("click", () => {
   isEditTask = false;
   todos.splice(0, todos.length);
@@ -114,6 +122,8 @@ clearAll.addEventListener("click", () => {
   showTodo();
 });
 
+/* This event listener is triggered when 
+a key is released in the taskInput element */
 taskInput.addEventListener("keyup", (e) => {
   let userTask = taskInput.value.trim();
   if (e.key == "Enter" && userTask) {
