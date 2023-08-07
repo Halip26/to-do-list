@@ -41,7 +41,8 @@ function showTodo(filter) {
     });
   }
   // Set the innerHTML of taskBox to either liTag or a message indicating no tasks
-  taskBox.innerHTML = liTag || `<span>You don't have any task here</span>`;
+  taskBox.innerHTML =
+    liTag || `<span>Kamu tidak memiliki tugas apa pun di sini</span>`;
 
   // Check if there are any tasks present
   let checkTask = taskBox.querySelectorAll(".task");
