@@ -26,13 +26,9 @@ body {
   padding: 28px 0 30px;
   margin: 137px auto;
   background: #202124;
-  background: linear-gradient(
-    180deg,
-    rgba(32, 33, 36, 1) 0%,
-    rgba(32, 33, 36, 0.9192051820728291) 100%
-  );
+  background: linear-gradient(180deg, #202124 0%, #202124ea 100%);
   border-radius: 7px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px #00000080;
 }
 
 .task-input {
@@ -58,6 +54,7 @@ body {
   background: #303134;
 }
 
+/* for javascript filters */
 .task-input input:focus,
 .task-input input.active {
   padding-left: 52px;
@@ -73,6 +70,7 @@ body {
   padding-top: 0;
 }
 
+/* for javascript function showTodo(filter) */
 .controls,
 li {
   display: flex;
@@ -83,6 +81,21 @@ li {
 .controls {
   padding: 18px 25px;
   border-bottom: 1px solid #303134;
+}
+
+.controls .clear-btn {
+  border: none;
+  opacity: 0.6;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+  background: linear-gradient(30deg, #3c87ff 0%, #2f42ff 100%);
 }
 
 .filters span {
@@ -102,21 +115,6 @@ li {
 
 .filters span.active {
   color: #3c87ff;
-}
-
-.controls .clear-btn {
-  border: none;
-  opacity: 0.6;
-  outline: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 13px;
-  padding: 7px 13px;
-  border-radius: 4px;
-  letter-spacing: 0.3px;
-  pointer-events: none;
-  transition: transform 0.25s ease;
-  background: linear-gradient(30deg, #3c87ff 0%, #2f42ff 100%);
 }
 
 .clear-btn.active {
