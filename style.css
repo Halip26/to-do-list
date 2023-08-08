@@ -70,14 +70,6 @@ body {
   padding-top: 0;
 }
 
-/* for javascript function showTodo(filter) */
-.controls,
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .controls {
   padding: 18px 25px;
   border-bottom: 1px solid #303134;
@@ -96,6 +88,14 @@ li {
   pointer-events: none;
   transition: transform 0.25s ease;
   background: linear-gradient(30deg, #3c87ff 0%, #2f42ff 100%);
+}
+
+/* for javascript function showTodo(filter) */
+.controls,
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .filters span {
@@ -117,6 +117,7 @@ li {
   color: #3c87ff;
 }
 
+/* for javascript function showTodo */
 .clear-btn.active {
   opacity: 0.9;
   pointer-events: auto;
