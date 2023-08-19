@@ -19,12 +19,13 @@ filters.forEach((btn) => {
 
 // create function to add list in class (.task-box)
 function showTodo(filter) {
-  let liTag = "";
+  let listTag = "";
   if (todos) {
     todos.forEach((todo, id) => {
       let completed = todo.status == "completed" ? "checked" : "";
+      //logical OR operator (||) in JavaScript
       if (filter == todo.status || filter == "all") {
-        liTag += `<li class="task">
+        listTag += `<li class="task">
                     <label for="${id}">
                         <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${completed}>
                         <p class="${completed}">${todo.name}</p>
@@ -40,9 +41,9 @@ function showTodo(filter) {
       }
     });
   }
-  // Set the innerHTML of taskBox to either liTag or a message indicating no tasks
+  // Set the innerHTML of taskBox to either listTag or a message indicating no tasks
   taskBox.innerHTML =
-    liTag || `<span>Kamu tidak memiliki tugas apa pun di sini</span>`;
+    listTag || `<span>Kamu tidak memiliki tugas apa pun di sini</span>`;
 
   // Check if there are any tasks present
   let checkTask = taskBox.querySelectorAll(".task");
@@ -64,6 +65,34 @@ function showTodo(filter) {
 }
 // to show all the lists
 showTodo("all");
+
+/* This event listener is triggered when the clearAll element is clicked 
+ It clears all the tasks in the todos array and updates the localStorage */
+clearAll.addEventListener("click", () => {
+  isEditTask = false;
+  todos.splice(0, todos.length);
+  localStorage.setItem("todo-list", JSON.stringify(todos));
+  showTodo();
+});
+
+/* This event listener is triggered when 
+a key is released in the taskInput element */
+taskInput.addEventListener("keyup", (e) => {
+  let userTask = taskInput.value.trim();
+  if (e.key == "Enter" && userTask) {
+    if (!isEditTask) {
+      todos = !todos ? [] : todos;
+      let taskInfo = { name: userTask, status: "pending" };
+      todos.push(taskInfo);
+    } else {
+      isEditTask = false;
+      todos[editId].name = userTask;
+    }
+    taskInput.value = "";
+    localStorage.setItem("todo-list", JSON.stringify(todos));
+    showTodo(document.querySelector("span.active").id);
+  }
+});
 
 /* showMenu is responsible for displaying 
 a menu associated with a selected task.*/
@@ -112,31 +141,3 @@ function deleteTask(deleteId, filter) {
   localStorage.setItem("todo-list", JSON.stringify(todos));
   showTodo(filter);
 }
-
-/* This event listener is triggered when the clearAll element is clicked 
- It clears all the tasks in the todos array and updates the localStorage */
-clearAll.addEventListener("click", () => {
-  isEditTask = false;
-  todos.splice(0, todos.length);
-  localStorage.setItem("todo-list", JSON.stringify(todos));
-  showTodo();
-});
-
-/* This event listener is triggered when 
-a key is released in the taskInput element */
-taskInput.addEventListener("keyup", (e) => {
-  let userTask = taskInput.value.trim();
-  if (e.key == "Enter" && userTask) {
-    if (!isEditTask) {
-      todos = !todos ? [] : todos;
-      let taskInfo = { name: userTask, status: "pending" };
-      todos.push(taskInfo);
-    } else {
-      isEditTask = false;
-      todos[editId].name = userTask;
-    }
-    taskInput.value = "";
-    localStorage.setItem("todo-list", JSON.stringify(todos));
-    showTodo(document.querySelector("span.active").id);
-  }
-});
