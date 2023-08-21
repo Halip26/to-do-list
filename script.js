@@ -66,15 +66,6 @@ function showTodo(filter) {
 // to show all the lists
 showTodo("all");
 
-/* This event listener is triggered when the clearAll element is clicked 
- It clears all the tasks in the todos array and updates the localStorage */
-clearAll.addEventListener("click", () => {
-  isEditTask = false;
-  todos.splice(0, todos.length);
-  localStorage.setItem("todo-list", JSON.stringify(todos));
-  showTodo();
-});
-
 /* This event listener is triggered when 
 a key is released in the taskInput element */
 taskInput.addEventListener("keyup", (e) => {
@@ -92,6 +83,15 @@ taskInput.addEventListener("keyup", (e) => {
     localStorage.setItem("todo-list", JSON.stringify(todos));
     showTodo(document.querySelector("span.active").id);
   }
+});
+
+/* This event listener is triggered when the clearAll element is clicked 
+ It clears all the tasks in the todos array and updates the localStorage */
+clearAll.addEventListener("click", () => {
+  isEditTask = false;
+  todos.splice(0, todos.length);
+  localStorage.setItem("todo-list", JSON.stringify(todos));
+  showTodo();
 });
 
 /* showMenu is responsible for displaying 
