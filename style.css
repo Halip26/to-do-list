@@ -90,7 +90,6 @@ body {
   background: linear-gradient(30deg, #3c87ff 0%, #2f42ff 100%);
 }
 
-/* for javascript function showTodo(filter) */
 .controls,
 li {
   display: flex;
@@ -196,6 +195,14 @@ li {
   cursor: pointer;
 }
 
+.settings li:hover {
+  background: #3c87ff;
+}
+
+.settings li i {
+  padding-right: 8px;
+}
+
 .settings .task-menu {
   z-index: 10;
   right: -5px;
@@ -235,14 +242,6 @@ li {
 
 .task-menu li:last-child {
   margin-bottom: 0;
-}
-
-.settings li:hover {
-  background: #3c87ff;
-}
-
-.settings li i {
-  padding-right: 8px;
 }
 
 @media (max-width: 480px) {
