@@ -8,7 +8,7 @@ let editId,
   isEditTask = false,
   todos = JSON.parse(localStorage.getItem("todo-list"));
 
-// for cennecting with property in style.css
+// for connecting with .filters span property
 filters.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector("span.active").classList.remove("active");
@@ -41,6 +41,7 @@ function showTodo(filter) {
       }
     });
   }
+
   // Set the innerHTML of taskBox to either listTag or a message indicating no tasks
   taskBox.innerHTML =
     listTag || `<span>Kamu tidak memiliki tugas apa pun di sini</span>`;
@@ -63,6 +64,7 @@ function showTodo(filter) {
     taskBox.classList.remove("overflow");
   }
 }
+
 // to show all the lists
 showTodo("all");
 
